@@ -18,7 +18,8 @@ body {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -165,12 +166,15 @@ label span {
   font-size: 13px;
 }
 
-input {
+input,
+select {
   width: 100%;
   min-height: 42px;
   border-radius: 7px;
   border: 1px solid var(--border);
   padding: 0 12px;
+  background: #ffffff;
+  color: #172033;
 }
 
 .records {
@@ -180,7 +184,7 @@ input {
 
 .records article {
   display: grid;
-  grid-template-columns: 54px 1fr;
+  grid-template-columns: 54px 1fr auto;
   gap: 14px;
   align-items: center;
   padding: 14px;
@@ -208,6 +212,237 @@ input {
   line-height: 1.6;
 }
 
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.tabs button {
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.tabs .tab-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.session-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 14px;
+}
+
+.session-bar label {
+  min-width: 220px;
+  flex: 1;
+}
+
+.session-bar button {
+  padding: 0 18px;
+}
+
+.session-status {
+  align-self: center;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.new-venue-bar {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+
+.link-btn {
+  min-height: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  padding: 0 4px;
+  font-weight: 600;
+}
+
+.notice {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--accent) 10%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  color: #334155;
+}
+
+.judge {
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  border-radius: 7px;
+  font-weight: 600;
+}
+
+.judge.normal {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
+}
+
+.judge.abnormal {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 0 18px;
+}
+
+.chips {
+  margin-bottom: 14px;
+}
+
+.chips .chip-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: #64748b;
+  font-size: 13px;
+  background: #f8fafc;
+}
+
+.row-abnormal {
+  background: #fff7f7;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge.ok {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.badge.danger {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.row-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.empty {
+  color: #64748b;
+  margin: 8px 0 4px;
+}
+
+.metric-danger {
+  border-top-color: #dc2626 !important;
+}
+
+.metric-danger strong {
+  color: #dc2626;
+}
+
+.metric-small {
+  font-size: 22px !important;
+}
+
+.danger-outline {
+  border-color: #fecaca;
+  color: #b91c1c;
+  padding: 0 14px;
+}
+
+.text-danger {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.report-head .meta,
+.meta {
+  color: #64748b;
+  font-size: 13px;
+  margin: 6px 0 0;
+}
+
+.report-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.report-actions button {
+  padding: 0 14px;
+}
+
+.advice-list {
+  display: grid;
+  gap: 12px;
+}
+
+.advice-card {
+  border: 1px solid #fecaca;
+  border-left: 5px solid #dc2626;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #fffbfb;
+}
+
+.advice-card header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.advice-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #334155;
+  line-height: 1.8;
+}
+
+.report .judge {
+  margin-top: 16px;
+}
+
 @media (max-width: 860px) {
   .metrics,
   .workspace,
@@ -218,5 +453,30 @@ input {
   .hero {
     min-height: 210px;
     padding: 24px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .records article {
+    grid-template-columns: 44px 1fr;
+  }
+
+  .records article button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media print {
+  .tabs,
+  .report-actions,
+  .hero {
+    display: none;
+  }
+
+  .panel,
+  .metrics article {
+    box-shadow: none;
   }
 }
